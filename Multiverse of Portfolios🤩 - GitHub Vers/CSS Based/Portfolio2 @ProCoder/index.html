@@ -2,8 +2,582 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Responsive Portfolio Website using HTML and CSS"
+    />
+    <meta name="keywords" content="Resume, CV, Portfolio, HTML, CSS" />
+    <meta name="author" content="Arijeet Mondal" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Responsive Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <!-- navigation menu -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+          <!-- adds a zoom-in effect of 1500 msec for the logo name -->
+          <!-- using class logo, we will change the font of the name and give a colour to it -->
+          <span>Arijeet Mondal</span>
+        </div>
+
+        <div class="links">
+          <!-- using class link to create a hover effect for the nav bar options -->
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="100"
+          >
+            <a href="#home">Home</a>
+          </div>
+          <!-- creates a delayed fade up motion for Home button of 100 msec -->
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <a href="#about">About</a>
+          </div>
+          <!-- creates a delayed fade up motion for About button of 200 msec -->
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="300"
+          >
+            <a href="#skills">Skills</a>
+          </div>
+          <!-- creates a delayed fade up motion for Skills button of 300 msec -->
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <a href="#services">Services</a>
+          </div>
+          <!-- creates a delayed fade up motion for Services button of 400 msec -->
+          <div
+            class="link"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="500"
+          >
+            <a href="#contact">Contact</a>
+          </div>
+          <!-- creates a delayed fade up motion for Contact button of 500 msec -->
+        </div>
+
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+
+      <div class="dropdown">
+        <!-- class dropdown is for the responsiveness for small device usage -->
+
+        <div class="links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Landing Page Start -->
+    <section id="home">
+      <div class="main-container">
+        <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+          <!-- creates a zoom-out effect for the front image of 1500 msec and 100 msec delay -->
+          <!-- class image is used to add hover effect to the photo -->
+          <img
+            src="Gemini_Generated_Image_8bilju8bilju8bil.png"
+            alt="Arijeet-Mondal"
+          />
+        </div>
+
+        <div class="content">
+          <h1
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            data-aos-delay="700"
+          >
+            <!-- creates a fade-left effect for self introduction of 1500 msec and 700 msec delay -->
+            <!-- adds a fade-left effect -->
+            Hey I'm
+            <span>Arijeet Mondal</span>
+          </h1>
+
+          <div
+            class="typewriter"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-delay="900"
+          >
+            <!-- creates a fade-right effect for self introduction of 1500 msec and 900 msec delay -->
+            <!-- class typewriter is used to add a typerwriter effect -->
+            I'm a
+            <span class="typewriter-text"></span>
+            <label for=""></label>
+          </div>
+
+          <p
+            data-aos="flip-down"
+            data-aos-duration="1500"
+            data-aos-delay="1100"
+          >
+            <!-- creates a flip-down effect for self introduction text of 1500 msec and 1100 msec delay -->
+            2nd-year B.Tech student passionate about crafting seamless,
+            user-centric web experiences. Skilled in HTML, CSS, JavaScript, and
+            backed by strong foundations in C, C++ & DSA, I build efficient,
+            scalable solutions while constantly exploring ideas that create real
+            impact.
+          </p>
+
+          <div class="social-links">
+            <!-- class social links is used to add the hover effect -->
+            <a
+              href="https://github.com/arijeetcodes"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1300"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/arijeetcodes/"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1400"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/arijeet-mondal-03b202321/"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1500"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://x.com/ArijeetNit88073"
+              target="_blank"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1600"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <!-- creates a fade-up effect for icon text of 1500 msec and 1300, 1400, 1500, 1600 msec delay respectively -->
+          </div>
+
+          <div
+            class="btn"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            data-aos-delay="1800"
+          >
+            <!-- creates a zoom-in effect for icon text of 1500 msec and 1800 msec delay respectively -->
+            <!-- class btn is used to add the hover effect -->
+            <button>Hire Me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section Start -->
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1500">
+          <span>About Me</span>
+        </div>
+        <!-- creates a fade-up effect for icon text of 1500 msec -->
+        <!-- class title has been used to add double underlines -->
+
+        <div class="about-details">
+          <div
+            class="left"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <!-- creates a fade-right effect for icon text of 1500 msec and 200 msec delay -->
+            <!-- class left is used to slide from left to right -->
+            <img
+              src="Gemini_Generated_Image_8bilju8bilju8bil.png"
+              alt="Arijeet-Mondal"
+            />
+          </div>
+          <!-- class left and right has also been used to place the two contents side by side -->
+          <div class="right">
+            <div
+              class="topic"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-delay="200"
+            >
+              Money is My Passion
+            </div>
+            <!-- class topic is used to slide from right to left -->
+            <!-- creates a fade-left effect for icon text of 1500 msec and 200 msec delay respectively -->
+            <p
+              data-aos="flip-down"
+              data-aos-duration="1500"
+              data-aos-delay="300"
+            >
+              <!-- creates a flip-down effect for icon text of 1500 msec and 300 msec delay respectively -->
+              I am a 2nd-year B.Tech student who loves bringing ideas to life on
+              the web. Frontend development excites me because it blends
+              creativity with problem solving, and I enjoy crafting interfaces
+              that feel smooth, engaging, and easy to use. I work with HTML,
+              CSS, and JavaScript every day. Beyond web development, I have
+              built a strong foundation in C, C++, and Data Structures &
+              Algorithms, which helps me think through problems and write
+              efficient code. I am curious, always experimenting with new ideas,
+              and eager to grow into a developer who can build projects that
+              make a real impact.
+            </p>
+
+            <div
+              class="button"
+              data-aos="zoom-in-right"
+              data-aos-duration="1500"
+              data-aos-delay="400"
+            >
+              <!-- creates a zoom-in-right effect for button of 1500 msec and 400 msec delay respectively -->
+              <!-- class button is used to add the hover effect -->
+              <button>Download CV</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Skill Section Start -->
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1200">
+          <span>My Skills</span>
+        </div>
+        <!-- creates a fade-up effect for heading of 1200 mse -->
+        <!-- class title has been used to add double underlines -->
+
+        <div class="skills-details">
+          <div class="text">
+            <div
+              class="topic"
+              data-aos="fade-right"
+              data-aos-duration="1200"
+              data-aos-delay="200"
+            >
+              Skills Reflects Our Knowledge
+            </div>
+            <!-- creates a fade-right effect for icon text of 1200 msec and 200 msec delay respectively -->
+
+            <p
+              data-aos="fade-right"
+              data-aos-duration="1200"
+              data-aos-delay="400"
+            >
+              <!-- creates a fade-right effect for icon text of 1200 msec and 400 msec delay respectively -->
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              fuga distinctio perspiciatis cupiditate maxime atque labore vitae
+              harum eligendi, dicta expedita iusto molestiae blanditiis est
+              deserunt quibusdam quos nesciunt provident quasi dolore qui, quo
+              culpa veniam. Doloremque qui itaque odit!
+            </p>
+
+            <div
+              class="experience"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay="600"
+            >
+              <!-- creates a fade-up effect for icon text of 1200 msec and 600 msec delay respectively -->
+              <div class="num">0</div>
+              <!-- class num and exp have been used to add sizes -->
+              <div class="exp">
+                Years of<br />
+                Experience
+              </div>
+            </div>
+          </div>
+          <div class="boxes">
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+                data-aos-delay="150"
+              >
+                HTML
+              </div>
+              <!-- creates a fade-right effect for HTML text of 1200 msec and 200 msec delay respectively -->
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="300"
+              >
+                10%
+              </div>
+              <!-- creates a zoom-in effect for Percentage text of 1200 msec and 300 msec delay respectively -->
+            </div>
+
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="150"
+              >
+                CSS
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="300"
+              >
+                3%
+              </div>
+            </div>
+
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+                data-aos-delay="450"
+              >
+                JavaScript
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="600"
+              >
+                1%
+              </div>
+            </div>
+
+            <div class="box">
+              <div
+                class="topic"
+                data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="450"
+              >
+                Python
+              </div>
+              <div
+                class="per"
+                data-aos="zoom-in"
+                data-aos-duration="1200"
+                data-aos-delay="600"
+              >
+                1%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Services Section Start -->
+    <section class="services" id="services">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1200">
+          <span>My Services</span>
+        </div>
+        <!-- creates a fade-up effect for heading of 1200 msec -->
+
+        <div class="boxes">
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="200"
+          >
+            <!-- creates a fade-right effect for WebDev Box of 1500 msec and 200 msec delay respectively -->
+            <div class="icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+
+            <div class="topic">Web Development</div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium necessitatibus incidunt molestiae praesentium optio
+              enim?.
+            </p>
+          </div>
+
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="400"
+          >
+            <div class="icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+
+            <div class="topic">Graphic Design</div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium necessitatibus incidunt molestiae praesentium optio
+              enim?.
+            </p>
+          </div>
+
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="600"
+          >
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+
+            <div class="topic">Digital Marketing</div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium necessitatibus incidunt molestiae praesentium optio
+              enim?.
+            </p>
+          </div>
+
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="800"
+          >
+            <div class="icon">
+              <i class="fab fa-android"></i>
+            </div>
+
+            <div class="topic">Icon Design</div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium necessitatibus incidunt molestiae praesentium optio
+              enim?.
+            </p>
+          </div>
+
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="1000"
+          >
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+
+            <div class="topic">Photography</div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium necessitatibus incidunt molestiae praesentium optio
+              enim?.
+            </p>
+          </div>
+
+          <div
+            class="box"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="1200"
+          >
+            <div class="icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+
+            <div class="topic">App Development</div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium necessitatibus incidunt molestiae praesentium optio
+              enim?.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me Section Start -->
+    <section class="contact" id="contact">
+      <div class="content">
+        <div class="title" data-aos="fade-up" data-aos-duration="1500">
+          <!-- creates a fade-right effect for Contact Me Heading of 1500 msec -->
+          <span>Contact Me</span>
+        </div>
+
+        <div class="text">
+          <div
+            class="topic"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-delay="250"
+          >
+            Have Any Project?
+          </div>
+          <!-- creates a fade-right effect for the question of 1500 msec and 200 msec delay respectively -->
+
+          <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam
+            nulla eius rerum repellat perspiciatis!
+          </p>
+
+          <div
+            class="button"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            data-aos-delay="750"
+          >
+            <!-- creates a zoom-in effect for Let's Chat Button of 1500 msec and 400 msec delay respectively -->
+            <button>Let's Chat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="text">
+        <span
+          >Made with Love💌 | Created By
+          <a href="https://github.com/arijeetcodes">Arijeet Mondal</a> &
+          Inspired By
+          <a href="https://www.youtube.com/@procoder09">procoder09</a> |
+          &copy;2026 Under Fair Use</span
+        >
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 0 });
+    </script>
+    <script src="typewriter.js"></script>
+  </body>
 </html>
