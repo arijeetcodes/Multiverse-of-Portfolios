@@ -1,0 +1,810 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* sets the width of the custom scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* sets the colour of the custom scrollbar space */
+::-webkit-scrollbar-thumb {
+  background: #bb0a1e;
+  /* sets the colour of the custom scrollbar */
+  border-radius: 12px;
+  /* adds a curve of the selected radius to the corner of the scrollbar */
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bb0a1e;
+}
+
+/* navbar styling */
+nav {
+  width: 100%;
+  height: 10vh;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* Gets the name, nav option, and hamburger menu in one line */
+  justify-content: space-around;
+  /* justify content spacce around puts the element on start, mid, end in horizontal axis */
+  align-items: center;
+  /* align-items center brings all three elements to the center of the div box */
+}
+
+.logo {
+  color: white;
+  /* using logo class we give white colour to our name */
+  font-size: 2rem;
+  font-weight: bold;
+  /* gives boldness to the name */
+}
+
+.logo span {
+  color: #bb0a1e;
+  /* gives colour to the name */
+  text-shadow: 0 0 10px #bb0a1e;
+  /* gives a shadow effect of the given colour to the name */
+}
+
+.hamburg,
+.cancel {
+  cursor: pointer;
+  position: absolute;
+  /* lifts up the hamburg and cancel element so that other elements can move under it */
+  right: 15px;
+  top: 10px;
+  /* usinig right and top we bring both the elements to the top right corner */
+  color: white;
+  /* gives them a white colour */
+  opacity: 0;
+  /* makes them invisible */
+  pointer-events: none;
+  font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+  /* used to give size to the two elements */
+}
+
+.nav-container .links {
+  display: flex;
+  /* gets the links in one horizontal line */
+}
+
+.nav-container .links a {
+  position: relative;
+  /* position is set to relative to limit the hover effect (underline) */
+  font-size: 1.2rem;
+  /* sets their size */
+  color: white;
+  /* gives them white colour */
+  margin: 0 20px;
+  /* gives space between each nav elements of 20px */
+  text-decoration: none;
+  font-weight: 550;
+  transition: 0.3s linear;
+}
+
+.nav-container .links a::before {
+  position: absolute;
+  /* this fixes the range of the underline */
+  content: "";
+  bottom: -3px;
+  /* this makes sure that underlines goes below the element */
+  left: 0;
+  /* using left or right we can decide the direction of the origin of the underline */
+  width: 0%;
+  /* keeping width 0% makes the underline disappear and reappear */
+  height: 3px;
+  /* used to set the height os the under which will come under the element */
+  background-color: #bb0a1e;
+  /* used to set colour of the underline */
+  transition: 0.2s linear;
+  /* using 0.2s we can decide the duration of underlining */
+}
+
+.nav-container .links a:hover::before {
+  width: 100%;
+  /* this makes the hovering underline from 0(disappear) to 100(fully reappear) */
+}
+
+.nav-container .links a:hover {
+  color: #bb0a1e;
+  /* used to set the colour of the nav element during hovering */
+}
+
+.dropdown {
+  /* for small device responsiveness */
+  z-index: 100;
+  position: absolute;
+  /* gets the dropdown menu element and cancel element to a different plane than the hamburger menu element */
+  top: 0;
+  /* brings the dropdown menu elements to the absolute top */
+  transform: translateY(-500px);
+  /* this somehow slides the absolute element to under the under element */
+  width: 100%;
+  height: auto;
+  backdrop-filter: blur(4px) brightness(40%);
+  /* creates a glass-morphism vibe */
+  box-shadow: 0 0 20px black;
+  /* gives a black shadown to the glass box */
+  transition: 0.2s linear;
+}
+
+.dropdown .links a {
+  display: flex;
+  /* well display flex generally makes the elements stand horizontally in line, but ig since we used that translateY thing, now it makes the elements stand vertically in line */
+  color: white;
+  /* gives the dropdown menu element white colour */
+  text-decoration: none;
+  justify-content: center;
+  /*brings the dropdown menu element to the center */
+  padding: 15px 0;
+  /* this gives space between the inner elements of the dropdown menu */
+  align-items: center;
+  /* this brings the inner elements of the dropdown menu to their respective area center */
+  transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+  background-color: #bb0a1e;
+  /* give a background colour to the dropdown menu element when hovered */
+}
+
+section {
+  width: 100%;
+  min-height: 90vh;
+}
+
+section .main-container {
+  display: flex;
+  /* lifts the image and content */
+  justify-content: space-between;
+  /* makes the image and content side by side horizontally */
+  padding-left: 100px;
+  /* shifts the entire content under the class a bit to the left */
+  align-items: center;
+  /* shifts the entire content under the class at the center vertically */
+}
+
+.main-container .image {
+  width: 450px;
+  height: 77vh;
+  /* set to 450px:77vh to feel the perfection */
+  margin-top: 35px;
+  margin-left: 4%;
+  /* margining has been done so the perfection feeling this is optional */
+  padding-top: 10px;
+  /* shifts the image a bit down so that it feels perfect */
+  border-radius: 100%;
+  /* makes the thin rectangle into oval shape */
+  overflow: hidden;
+  /* converges the images frame into a thin rectangle */
+  box-shadow: 0 0 50px #bb0a1e;
+  /* gives a red shadown to the image frame */
+}
+/* special note: the feel of perfection will vary from image to image, you will have to play with the dimension to your feel */
+
+.main-container .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* object-fit enlargens the image to fit the frame */
+  /* object-position keeps the image fixed in the center */
+}
+
+.main-container .image:hover {
+  animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.05;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+/* this keyframes animated makes a infinite zoom-in-out animation, each cycle of 1.5 secs */
+
+.main-container .content {
+  color: white;
+  /* makes the content white */
+  width: 40%;
+}
+
+.content h1 {
+  font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+/* used to set the h1 font-size */
+
+.content h1 span {
+  color: #bb0a1e;
+  /* colours the name */
+  text-shadow: 0 0 10px #bb0a1e;
+  /* adds shadow to the name */
+}
+
+.content .typewriter {
+  font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+  /* sets the fontsize for the typewriter class */
+  font-weight: 600;
+  /* sets the weight for the typewriter class */
+}
+
+.content .typewriter-text {
+  color: #bb0a1e;
+  /* sets the colour for typewriter-text class */
+  text-shadow: 0 0 10px #bb0a1e;
+  /* sets the coloured shadow for typewriter-text class */
+}
+
+.content p {
+  font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+  margin: 10px 0;
+}
+
+.social-links i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  /* create a distance between social link elements horizontaly */
+  height: 3rem;
+  /* create a distance between the summary and button vertically */
+  background-color: transparent;
+  border: 0.2rem solid #bb0a1e;
+  /* create a sharp edge border around the elements */
+  border-radius: 50%;
+  /* smoothens the border edges into a circle */
+  color: #bb0a1e;
+  /* sets the colour of the elements */
+  margin: 5px 15px;
+  /* margin: vertical margin, horizontal margin */
+  font-size: 1.5rem;
+  /* increases the size of the elements */
+  transition: 0.2s linear;
+}
+
+.social-links i:hover {
+  scale: 1.3;
+  /* creates a zoom-in hover effect */
+  color: black;
+  background-color: #bb0a1e;
+  /* interchanges the colour-scheme while hovering */
+  filter: drop-shadow(0 0 10px #bb0a1e);
+  /* creates a shadow effect while hovering */
+}
+
+.content button {
+  width: 50%;
+  height: 6vh;
+  /* sets the height and width of the button */
+  margin: 30px;
+  /* sets the margin size around the button */
+  background-color: #bb0a1e;
+  /* sets overall button colour */
+  color: white;
+  /* sets the text colour */
+  border: none;
+  outline: none;
+  font-size: 150%;
+  font-weight: 700;
+  /* sets the font-size and font-weight */
+  border-radius: 5px;
+  /* smoothens the sharp edges of the button */
+  cursor: pointer;
+  /* turns the cursor into a pointer */
+  transition: 0.2s linear;
+}
+
+.content button:hover {
+  scale: 1.1;
+  /* creates a zoom in hovering effect */
+  color: #bb0a1e;
+  border: 2px solid #bb0a1e;
+  background-color: transparent;
+  /* interchanges the colour-scheme when hovering */
+  font-weight: 700;
+  /* maintains the fon-size while hovering */
+  box-shadow: 0 0 40px #bb0a1e;
+  /* creates a coloured box-shadow effect */
+}
+
+/* About Section Styling */
+section .content {
+  width: 80%;
+  /* reduces the width range from 100% and gives a margin of 10% each on the side borders */
+  margin: 0px auto;
+  font-family: "Poppins" sans-serif;
+}
+.about .about-details {
+  display: flex;
+  /* brings the photo and (about text + Download CV button) in one line */
+  justify-content: space-between;
+  /* gets the photo and (about text + Download CV button) in horizontal line with space between them */
+  align-items: center;
+  /* gets the photo and (about text + Download CV button) in the center of the vertical line */
+}
+section .title {
+  display: flex;
+  /* shifts the about me title to one axis */
+  justify-content: center;
+  /* gets the title to the center of the horizontal axis */
+  margin-bottom: 40px;
+  /* makes a margin didtances of 40px between the title and the page content */
+}
+section .title span {
+  color: white;
+  /* makes the font color of the title white */
+  font-size: 30px;
+  /* increases the font size of the title to 30px */
+  font-weight: 600;
+  /* increases the font weight of the tilte */
+  position: relative;
+  /* creates the plane for any effect/addition */
+  padding-bottom: 8px;
+  /* creates a padding at the bottom of 8px such that there is space between the title and the underline */
+}
+section .title span::before,
+section .title span::after {
+  content: "";
+  position: absolute;
+  /* limits the element to the range of previous position relative */
+  height: 3px;
+  /* sets the height of the underline */
+  width: 100%;
+  /* sets the width of the underline */
+  background: #bb0a1e;
+  /* sets the colour of the  underline */
+  left: 0;
+  /* removes one of the double recurrences of the underline */
+  bottom: 0;
+  /* shifts the line from the over to under */
+}
+section .title span::after {
+  bottom: -7px;
+  /* creates another underline 7px below the previous line */
+  width: 70%;
+  /* gives it the width of 30% less than the original */
+  left: 50%;
+  /* shifts it 50% from the left */
+  transform: translateX(-50%);
+  /* shifts it 50% in the X-axis of the current 100% (previous 50%) */
+}
+.about .about-details .left {
+  width: 45%;
+  /* sets the width of the area */
+}
+.about .left img {
+  height: 400px;
+  width: 400px;
+  /* sets the height and width of the image frame */
+  object-fit: cover;
+  /* sets the image to fit the frame without stretching */
+  border-radius: 12px;
+  /* smoothens the sharp edges of the border */
+}
+.about-details .right {
+  width: 55%;
+  /* sets the area of the class */
+}
+section .topic {
+  color: white;
+  /* sets the colour of the topic of the about section */
+  font-size: 25px;
+  font-weight: 500;
+  /* sets the font-size and font-weight of the topic */
+  margin-bottom: 10px;
+  /* gives a margin distance of 10px under the topic */
+}
+.about-details .right p {
+  text-align: justify;
+  /* stretches out the text contents to fit the area perfectly */
+  color: white;
+}
+section .button {
+  margin: 16px 0;
+  /* sets the margin of the button */
+}
+
+section .button button {
+  outline: none;
+  /* padding: 8px 16px; */
+  /* I personally think there is no need for padding here */
+  border-radius: 4px;
+  font-size: 25px;
+  /* font-weight: 400; */
+  /* I also think there is no need to update the font-weight */
+  background: #bb0a1e;
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  /* turns the pointer into a hand */
+  transition: all 0.4s ease;
+}
+
+section .button button:hover {
+  border-color: #bb0a1e;
+  background-color: #fff;
+  /* gives a white glow to the button when hovered */
+  color: #bb0a1e;
+}
+
+/* My Skills Page */
+.skills {
+  background: black;
+  /* adds additional black background */
+}
+.skills .content {
+  padding: 40px 0;
+}
+.skills .skills-details {
+  display: flex;
+  /* places the skill para and skill set side by side */
+  justify-content: space-between;
+  /* aligns the content in x axis and give space between them */
+  align-items: center;
+  /* aligns the content in the center wrt y axis */
+}
+.skills-details .text {
+  width: 50%;
+  /* reduces the class area to 50% */
+}
+.skills-details p {
+  color: white;
+  /* gives white colour to the text area */
+  text-align: justify;
+  /* stretches the text to fit the area of the class */
+}
+.skills .skills-details .experience {
+  display: flex;
+  /* aligns the elements of the class */
+  align-items: center;
+  /* aligns the elements of the class in the center wrt y axis */
+  margin: 0 10px;
+  /* gives margin of 10px from the left */
+}
+.skills-details .experience .num {
+  color: white;
+  font-size: 80px;
+  /* gives colour and font size to yoe */
+}
+.skills-details .experience .exp {
+  color: white;
+  /* gives colour to yoe text */
+  margin-left: 20px;
+  /* gives 20px margin from the left */
+  font-size: 18px;
+  font-weight: 500;
+  /* increases the font-size and font-weight of yoe text */
+  margin: 0 6px;
+  /* gives 6px margin from the right of the current area */
+}
+.skills-details .boxes {
+  width: 45%;
+  /* Reduces the width to 45% of the remaining 50% */
+  display: flex;
+  /* aligns the elements of the class */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* aligns the elements in x axis and gives space between them */
+}
+.skills-details .box {
+  width: calc(100% / 2 - 20px);
+  /* arranges the boxes in 2*2 */
+  margin: 20px 0;
+  /* gives margin of 20px top-bottom and 0px left-right */
+}
+.skills-details .boxes .topic {
+  font-size: 20px;
+  /* reduces the font-size to 20px */
+  color: #bb0a1e;
+  /* colors the font */
+}
+.skills-details .boxes .per {
+  font-size: 60px;
+  /* increases the font-size to 60px */
+  color: #bb0a1e;
+  /* colours the elements */
+}
+
+/* My Services Page */
+.services .boxes {
+  display: flex;
+  /* force aligns all the elements of the class */
+  flex-wrap: wrap;
+  /* aligns the elements in a line while giving them space inside */
+  justify-content: space-between;
+  /* aligns the elements in x axis while providing space between each element */
+}
+.services .boxes .box {
+  margin: 20px 0;
+  /* gives a margin of 20px on top-bottom and 0px on left-right */
+  width: calc(100% / 3 - 20px);
+  /* arrages the elements in 3*2 format */
+  text-align: center;
+  /* aligns the box content in the center */
+  border-radius: 12px;
+  padding: 30px 10px;
+  /* gives a padding of 30px top-bottom and 10px left-right within the box */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  /* doesn't change the cursor while pointing */
+  color: white;
+  /* colors the content of the box white */
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover {
+  background: #bb0a1e;
+  /* box shines color when hovered */
+  color: #fff;
+}
+.services .boxes .box .icon {
+  height: 50px;
+  width: 50px;
+  /* decreases the size of the icons */
+  background: #bb0a1e;
+  /* gives background color */
+  border-radius: 50%;
+  /* turns the square into circle */
+  text-align: center;
+  line-height: 50px;
+  /* brings the icon to the center of the circle */
+  font-size: 18px;
+  /* increases the size of the icons */
+  color: #fff;
+  margin: 0 auto 10px auto;
+  /* brings the icons to the center of the box */
+  transition: all 0.4s ease;
+}
+.boxes .box:hover .icon {
+  background-color: #fff;
+  /* turns the background color white when hovered */
+  color: #bb0a1e;
+  /* turns the icon color red when hovered */
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: white;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #fff;
+}
+
+/* Contect Me Page */
+.contact {
+  background: black;
+}
+.contact .content {
+  margin: 0 auto;
+  /* gives 0px margin on top-bottom, auto for left-right */
+  padding: 30px 0;
+  /* pads 30px top-bottom, 0px left-right */
+}
+.contact .text {
+  width: 80%;
+  /* reduces text area to 80% */
+  text-align: center;
+  /* brings the text to center */
+  margin: auto;
+  /* margin is set to auto */
+  color: white;
+}
+
+/* Footer Section */
+footer {
+  background: #bb0a1e;
+  /* gives background colour */
+  padding: 15px 0;
+  /* gives a padding of 15px top-bottom and 0px left-right */
+  text-align: center;
+  /* aligns the content to the center */
+  font-family: "Poppins", sans-serif;
+  /* gives the font-family */
+}
+footer .text span {
+  font-size: 17px;
+  /* increase the font-size */
+  font-weight: 400;
+  /* sets the font-weight */
+  color: #fff;
+  /* sets the colour of the content */
+}
+footer .text span a {
+  font-weight: 500;
+  /* sets the font-weight of the achor tag elements */
+  color: #fff;
+  /* sets the color of the anchor tag element */
+}
+footer .text span a:hover {
+  text-decoration: underline;
+  /* shows an underline when hovered */
+}
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #bb0a1e;
+  padding: 7px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+/* Small Device Responsiveness */
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    /* aligns the image and text in x-axis to the center */
+    flex-direction: column;
+    /* arranges the elements in a column */
+  }
+  .about .about-details .left {
+    display: flex;
+    /* aligns the image to one axis */
+    justify-content: center;
+    /* aligns the image in the center of x-axis */
+    width: 100%;
+    /* increases the picture frame to 100%? */
+  }
+  .about-details .right {
+    width: 90%;
+    /* increases the text area width to 90% */
+    margin: 40px 0;
+    /* gives margin of 40px top-bottom and 0px left-right */
+  }
+  .services .boxes .box {
+    margin: 20px 0;
+    /* gives magin of 20px top-bottom and 0px left-right */
+    width: calc(100% / 2 - 20px);
+    /* gives width such that it is 2*3 when responsive */
+  }
+}
+
+@media (max-width: 900px) {
+  .about .left img {
+    height: 350px;
+    width: 350px;
+    /* gives additional height and width for extra responsiveness */
+  }
+}
+
+@media (max-width: 968px) {
+  nav .logo {
+    position: absolute;
+    /* lifts up the name tag at the landing page */
+    top: 16px;
+    left: 15px;
+    /* sets the location for the name tag */
+    font-size: 1.5rem;
+    /* decreases the font-size of the name tag */
+  }
+
+  section .main-container {
+    padding-left: 0px;
+    /* gives 0px padding to the left */
+    display: flex;
+    /* aligns the elements of the class to a single axis */
+    flex-direction: column;
+    /* aligns the elements in a column */
+  }
+
+  .nav-container .links {
+    display: none;
+    /* removes the computer visible links so that hamburg menu can do its job */
+  }
+
+  .hamburg,
+  .cancel {
+    opacity: 1;
+    /* increases the opacity of the hamburg menu */
+    pointer-events: visible;
+    /* converts the cursor into pointer */
+  }
+
+  .main-container .content {
+    margin-top: 20px;
+    /* gives a margin of 20px to the top */
+    width: 80%;
+    /* sets the text area width to 80% */
+  }
+
+  .social-links i {
+    width: 2.5rem;
+    /* decreases the width area of the logo */
+    height: 2.5rem;
+    /* decreses the height area of the logo */
+    font-size: 1.5rem;
+  }
+
+  .main-container .image {
+    z-index: -1;
+    width: 50%;
+    /* decreases the width area of the picture frame */
+    height: 60%;
+    /* decreases the height area of the picture frame */
+  }
+
+  .skills .skills-details {
+    align-items: center;
+    justify-content: center;
+    /* sets the element in the center of x-y axis */
+    flex-direction: column;
+    /* arranges the elements in a column */
+  }
+  .skills-details .text {
+    width: 100%;
+    /* increases the text width area to 100% */
+    margin-bottom: 50px;
+    /* gives a margin of 50px to the bottom of text area */
+  }
+  .skills-details .boxes {
+    justify-content: center;
+    align-items: center;
+    /* alings the elements to the center of the x-y axis */
+    width: 100%;
+    /* increases the width area to 100% */
+  }
+  .services .boxes .box {
+    margin: 20px 0;
+    /* sets margin 20px top-bottom, 0px left-right */
+    width: 100%;
+    /* increases individual box width to 100% */
+  }
+  .contact .text {
+    width: 100%;
+    /* increases the width area to 100% */
+  }
+}
+
+@media (max-width: 500px) {
+  .main-container .image {
+    /* well the video did main-container but I personally felt it should be .main-container */
+    width: 50%;
+    height: 60%;
+    margin-bottom: 0px;
+  }
+
+  .main-container .content {
+    width: 80%;
+  }
+
+  .main-container button {
+    margin-top: 15px;
+  }
+
+  .skills-details .boxes .per {
+    font-size: 50px;
+    color: #bb0a1e;
+  }
+}
